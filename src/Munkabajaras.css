@@ -1,0 +1,77 @@
+.munkabajaras-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+
+  background: #f4f4f4;
+  padding: 20px;
+  width: 1310px;
+  height: 600px;
+  position: relative;
+}
+
+.munkabajaras-heading {
+  color: rgb(36, 41, 67);
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.calendar-wrapper {
+  background: #ffffff;
+  padding: 30px 30px 80px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+.full-calendar {
+  width: 100%;
+  max-width: 940px;
+  font-size: 1.2rem;
+}
+
+.full-calendar abbr {
+  text-decoration: none;
+}
+
+.berlet-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  padding: 10px 20px;
+  background: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.berlet-btn:hover {
+  background: rgb(50, 55, 85);
+}
+
+.save-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  padding: 10px 20px;
+  background: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: rgb(50, 55, 85);
+}

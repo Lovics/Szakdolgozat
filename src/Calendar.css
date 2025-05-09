@@ -1,0 +1,150 @@
+/*  A naptár fő konténere  */
+.calendar-container {
+  display: flex;                 /* Naptár + jelmagyarázat egymás mellett */
+  gap: 20px;                     /* Közöttük távolság */
+  background: white;
+  padding: 20px;
+  border-radius: 10px;           /* Lekerekített sarkok */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Finom árnyék */
+  position: relative;
+}
+
+
+.calendar-content {
+  flex-grow: 1;                  
+}
+
+/* Fejléc */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Éves nézet gomb stílusa */
+.year-view-btn {
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.year-view-btn:hover {
+  background-color: #0047ab;    /* Hover szín */
+}
+
+/* Jelmagyarázat doboz a jobb oldalon */
+.calendar-legend {
+  min-width: 200px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-end;         
+}
+
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* A színes jelölődoboz egy-egy típushoz */
+.color-box {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Szabadságtípusokhoz tartozó színek */
+.turquoise { background: turquoise; }
+.green     { background: green; }
+.red       { background: red; }
+.yellow    { background: yellow; }
+.lightblue { background: lightblue; }
+.purple    { background: purple; }
+.orange    { background: orange; }
+.gray      { background: gray; }
+.black     { background: black; }
+
+
+.react-calendar__tile.turquoise {
+  background: turquoise !important;
+  color: white;
+}
+
+.react-calendar__tile.green {
+  background: green !important;
+  color: white;
+}
+
+.react-calendar__tile.red {
+  background: red !important;
+  color: white;
+}
+
+.react-calendar__tile.yellow {
+  background: yellow !important;
+  color: black;
+}
+
+.react-calendar__tile.lightblue {
+  background: lightblue !important;
+  color: black;
+}
+
+.react-calendar__tile.purple {
+  background: purple !important;
+  color: white;
+}
+
+.react-calendar__tile.orange {
+  background: orange !important;
+  color: black;
+}
+
+.react-calendar__tile.gray {
+  background: gray !important;
+  color: white;
+}
+
+.react-calendar__tile.black {
+  background: black !important;
+  color: white;
+}
+
+
+.disable-highlight {
+  background: none !important;
+  color: inherit !important;
+}
+
+
+.react-calendar__tile--now {
+  background: none !important;   
+  color: inherit !important;
+  font-weight: bold;             
+}
+
+
+.react-calendar__month-view__days__day--weekend {
+  color: inherit !important;
+}
+
+
+.react-calendar__tile--now.react-calendar__tile--active {
+  background: #006edc !important;
+  color: white !important;
+}
+

@@ -1,0 +1,204 @@
+/* Fő konténer  */
+.holiday-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+
+  background: #f4f4f4;
+  padding: 20px;
+  width: 1310px;         
+  height: 600px;         
+  position: relative;    
+}
+
+/* Fejléc stílusa */
+.holiday-heading {
+  font-size: 36px;
+  color: rgb(36, 41, 67);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Naptárt tartalmazó kártya konténer */
+.calendar-wrapper {
+  background: #ffffff;
+  padding: 30px 30px 80px 30px; 
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+/* Naptár mérete és betűméret */
+.full-calendar {
+  width: 100%;
+  max-width: 940px;
+  font-size: 1.2rem;
+}
+
+/* Dátum rövidítések aláhúzásának eltávolítása */
+.full-calendar abbr {
+  text-decoration: none;
+}
+
+
+
+/* Köztes napok színezése a kijelölt tartományban */
+.selected-range {
+  background: #50ADC9 !important;
+  color: white !important;
+  border-radius: 0 !important;
+}
+
+/* A kijelölés kezdő és végpontjának eltérő megjelenítése */
+.selected-edge {
+  background: #2c3e50 !important;
+  color: white !important;
+  border-radius: 50% !important;
+}
+
+/* === Gomb: Igény beküldése (bal alsó) === */
+.submit-button {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #4b537a;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+/* Legördülő mező a szabadságtípus kiválasztásához */
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/*  Gomb: Véglegesítés */
+.confirm-button {
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.confirm-button:hover {
+  background-color: #4b537a;
+}
+
+.confirm-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Bezáró gomb a jobb felső sarokban */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Gomb: Beküldött kérelmek (jobb alsó) */
+.view-requests-button {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-requests-button:hover {
+  background-color: #4b537a;
+}
+
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Gomb: Mentés  */
+.save-button {
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #4b537a;
+}
+
+.save-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.react-calendar__tile--now.react-calendar__tile--active {
+  background: #006edc !important;
+  color: white !important;
+}
