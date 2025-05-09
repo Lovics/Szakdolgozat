@@ -143,8 +143,8 @@
 }
 
 
-.react-calendar__tile--now.react-calendar__tile--active {
-  background: #006edc !important;
-  color: white !important;
+.react-calendar__tile--now {
+  background: none !important;
+  color: inherit !important;
+  font-weight: normal !important;
 }
-
