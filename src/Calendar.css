@@ -143,3 +143,88 @@
 }
 
 
+/* Éves nézet háttér (átlátszó sötét) */
+.yearly-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal tartalom doboza */
+.yearly-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  
+}
+
+/* Bezáró gomb */
+.yearly-modal .close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.yearly-modal .close-button:hover {
+  color: #333;
+}
+
+/* Éves naptár grid: 3 oszlopban jelenítjük meg a 12 hónapot */
+.yearly-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 oszlopos elrendezés */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Egy adott havi naptár blokk */
+.month-calendar {
+  background: #f8f8f8;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+}
+
+.month-calendar h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.yearly-close-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.yearly-close-button {
+  padding: 10px 20px;
+  background-color: rgb(36, 41, 67);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.yearly-close-button:hover {
+  background-color: #4b537a;
+}

@@ -6,7 +6,7 @@ import "./Calendar.css";
 function CalendarSection() {
   const [date, setDate] = useState(new Date()); // Jelenleg kiválasztott dátum
   const [markedDates, setMarkedDates] = useState({}); // Megjelölt napok színkódokkal
-  const [showYearlyView, setShowYearlyView] = useState(false); // Éves nézet állapota (nincs jelenleg használva)
+  const [showYearlyView, setShowYearlyView] = useState(false); // Éves nézet állapota (modal)
 
   // Betölti a szabadságokat a localStorage-ből és színkódolja a napokat
   useEffect(() => {
@@ -78,9 +78,38 @@ function CalendarSection() {
           <div className="legend-item"><span className="color-box red"></span> - Home office</div>
         </div>
       </div>
+
+      {/* Éves nézet */}
+      {showYearlyView && (
+        <div className="yearly-modal-overlay">
+          <div className="yearly-modal">
+            <button className="close-button" onClick={() => setShowYearlyView(false)}>×</button>
+            <h2>Éves szabadságnaptár</h2>
+            <div className="yearly-grid">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div className="month-calendar" key={i}>
+                  <h4>{new Date(2025, i).toLocaleString('hu-HU', { month: 'long' })}</h4>
+                  <Calendar
+                    
+                    tileClassName={({ date }) => markedDates[date.toDateString()] || ""}
+                    activeStartDate={new Date(2025, i, 1)}
+                    value={null}
+                  />
+                </div>
+              ))}
+            </div>
+        <div className="yearly-close-button-wrapper">
+          <button className="yearly-close-button" onClick={() => setShowYearlyView(false)}>
+            Bezárás
+          </button>
+          </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
 
 export default CalendarSection;
+
 
