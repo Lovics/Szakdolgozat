@@ -24,9 +24,27 @@ const HolidayPage = () => {
     return [null, null];
   };
 
+  // Ütközés ellenőrzése a dátumok között
+  const hasConflict = (start, end) => {
+    const existingRequests = JSON.parse(localStorage.getItem("requests")) || [];
+    const newStart = new Date(start);
+    const newEnd = new Date(end);
+
+    return existingRequests.some(req => {
+      const existingStart = new Date(req.start);
+      const existingEnd = new Date(req.end);
+      return newStart <= existingEnd && newEnd >= existingStart; // átfedés ellenőrzése
+    });
+  };
+
   // Új kérelem mentése vagy véglegesítése localStorage-be
   const saveRequest = (isFinal = false) => {
     const [start, end] = normalizeRange(selectedRange);
+
+    if (hasConflict(start, end)) {
+      alert("Már van szabadság ezen a napon vagy a kiválasztott időszakban.");
+      return false; // Ne folytassa tovább
+    }
 
     const newRequest = {
       id: `TVL-${Math.floor(Math.random() * 1000000).toString().padStart(6, '0')}`, // Egyedi azonosító
@@ -40,6 +58,7 @@ const HolidayPage = () => {
 
     const existingRequests = JSON.parse(localStorage.getItem("requests")) || [];
     localStorage.setItem("requests", JSON.stringify([...existingRequests, newRequest]));
+    return true;
   };
 
   // Beküldés gombra kattintás 
@@ -54,7 +73,9 @@ const HolidayPage = () => {
 
   // Véglegesítés gombra kattintás
   const handleFinalSubmit = () => {
-    saveRequest(true);             // Mentés véglegesítve
+    const success = saveRequest(true);             // Mentés véglegesítve
+    if (!success) return;
+
     alert("A kérelmed véglegesítve!");
     setShowTypeModal(false);      
     setSelectedType("");          
@@ -63,7 +84,9 @@ const HolidayPage = () => {
 
   // Mentés (nem végleges)
   const handleSave = () => {
-    saveRequest(false);
+    const success = saveRequest(false);
+    if (!success) return;
+
     alert("A kérelem elmentve!");
     setShowTypeModal(false);
     setSelectedType("");
@@ -120,7 +143,6 @@ const HolidayPage = () => {
               <option value="O">Home office</option>
             </select>
 
-           
             <div className="modal-actions">
               <button className="save-button" onClick={handleSave} disabled={!selectedType}>
                 Mentés

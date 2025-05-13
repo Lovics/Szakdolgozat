@@ -60,7 +60,7 @@
   border-radius: 50% !important;
 }
 
-/* === Gomb: Igény beküldése (bal alsó) === */
+/* Gomb: Igény beküldése (bal alsó) */
 .submit-button {
   position: absolute;
   bottom: 20px;
@@ -198,7 +198,4 @@
   cursor: not-allowed;
 }
 
-.react-calendar__tile--now.react-calendar__tile--active {
-  background: #006edc !important;
-  color: white !important;
-}
+
